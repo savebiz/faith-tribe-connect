@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
+import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["300", "400", "700", "900"],
 });
 
 export const metadata: Metadata = {
   title: "Faith Tribe Digital Platform",
-  description: "The Digital Tabernacle for RCCG Region 63 Teens",
+  description: "A mobile-first engagement engine for the next generation.",
 };
 
 export default function RootLayout({
@@ -23,10 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scoll-smooth">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
+        className={`${outfit.variable} antialiased font-sans`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
