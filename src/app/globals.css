@@ -22,8 +22,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0F172A; /* Deep Slate */
-    --foreground: #F9FAFB; /* Off-White */
+    --background: #0F172A;
+    /* Deep Slate */
+    --foreground: #F9FAFB;
+    /* Off-White */
   }
 }
 
@@ -31,5 +33,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-  antialiased;
 }
