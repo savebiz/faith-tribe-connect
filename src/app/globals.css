@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --faith-teal: #1CABB9;
-  --youth-orange: #F8B229;
-  --deep-slate: #0F172A;
-  --off-white: #F9FAFB;
+  --background: #f8fafc;
+  /* Slate-50 */
+  --foreground: #0f172a;
+  /* Slate-900 */
+  --faith-teal: #0d9488;
+  /* Teal-600 */
+  --youth-orange: #f97316;
+  /* Orange-500 */
+  --deep-slate: #0f172a;
+  /* Slate-900 */
+  --off-white: #f8fafc;
+  /* Slate-50 */
 }
 
 @theme inline {
@@ -16,8 +22,8 @@
   --color-youth-orange: var(--youth-orange);
   --color-deep-slate: var(--deep-slate);
   --color-off-white: var(--off-white);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --radius-xl: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
