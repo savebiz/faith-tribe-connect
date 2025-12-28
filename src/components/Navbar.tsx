@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, Radio } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -33,12 +34,24 @@ export default function Navbar() {
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                {/* Logo */}
-                <Link
-                    href="/"
-                    className={`font-bold tracking-tight text-xl md:text-2xl ${isScrolled ? "text-slate-900 dark:text-white" : "text-white"}`}
-                >
-                    FAITH TRIBE
+                {/* Logo - Dynamic Switching */}
+                <Link href="/" className="relative h-10 w-40 flex-shrink-0">
+                    {/* White Logo: Use on Transparency (Top) OR Dark Mode (Scrolled) */}
+                    <Image
+                        src="/faithTribeWhite.png"
+                        alt="Faith Tribe"
+                        fill
+                        className={`object-contain transition-opacity duration-300 ${isScrolled ? "hidden dark:block" : "block"}`}
+                        priority
+                    />
+                    {/* Black Logo: Use ONLY on Light Mode + Scrolled */}
+                    <Image
+                        src="/faithTribeBlack.png"
+                        alt="Faith Tribe"
+                        fill
+                        className={`object-contain transition-opacity duration-300 ${isScrolled ? "block dark:hidden" : "hidden"}`}
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Links - Centered */}
@@ -60,8 +73,7 @@ export default function Navbar() {
                     {isLive && (
                         <Link
                             href="/live"
-                            className="flex items-center gap-2 px-4 py-2 bg-youtube-red hover:bg-red-600 text-white text-xs font-bold rounded-full transition-all animate-pulse shadow-lg shadow-red-500/20"
-                            style={{ backgroundColor: '#ef4444' }} // Tailwin red-500
+                            className="flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white text-xs font-bold rounded-full transition-all animate-pulse shadow-lg shadow-red-500/20"
                         >
                             <Radio className="w-4 h-4" />
                             LIVE

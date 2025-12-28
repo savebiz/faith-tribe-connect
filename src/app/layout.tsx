@@ -12,6 +12,9 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Faith Tribe Digital Platform",
   description: "A mobile-first engagement engine for the next generation.",
+  icons: {
+    icon: "/faithTribeBlack.png",
+  },
 };
 
 export default function RootLayout({
